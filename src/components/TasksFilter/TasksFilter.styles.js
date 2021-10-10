@@ -1,10 +1,11 @@
 import styled from 'styled-components';
+import { device } from '../../common/devices';
 
 export const ButtonDone = styled.button`
     width: 33.3%;
     height: 100%;    
     border: none;
-    background-color: #FFFFFF;
+    background-color: ${({ pressed }) => (pressed ? '#185AFF' : '#FFFFFF')};
 `;
 
 export const ButtonActive = styled(ButtonDone)`
@@ -21,4 +22,11 @@ export const TaskFilterWrapper = styled.div`
     border: 1px solid #000000; 
     border-radius: 3px;
     background-color: #FFFFFF;
+
+    @media ${device.mobileS} { 
+        width: 45%;
+    }
+    @media ${device.mobileL} { 
+        width: 33%;
+    }
 `;
